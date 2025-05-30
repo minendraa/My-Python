@@ -41,16 +41,17 @@ def check():
         elif choice==3:
             removebook=input("Enter the name of the book you would like to remove: ")
             removeebook=removebook.capitalize()
-            if removeebook in bookname:
-                l=bookname.index(removeebook)
-                bookname.pop(l)
-                author.pop(l)
-                date.pop(l)
-                readstatus.pop(l)
-                print(f"{removeebook} has been removed from the list.. ")
-            else:
+            try:
+                if removeebook in bookname:
+                    l=bookname.index(removeebook)
+                    bookname.pop(l)
+                    author.pop(l)
+                    date.pop(l)
+                    readstatus.pop(l)
+                    print(f"{removeebook} has been removed from the list.. ")
+            except:
                 print(f"Error! did not find any book with the name {removeebook} in your library.")
-                return check()
+                return
             
         elif choice==4:
             return
