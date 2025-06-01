@@ -40,7 +40,7 @@ def check():
                 counting(tuple1)
                 
             else:
-                return "hhhh"
+                return
         else:
             print("Enter a valid number....")
 
