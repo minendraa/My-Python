@@ -24,6 +24,9 @@ def Calculations():
         return Calculations()
 
     average_marks_obtained = (subject1 + subject2 + subject3 + subject4) / 4
+    #rounded_average_marks_obtained=round({average_marks_obtained},2)
+    rounded_average_marks_obtained="{:.2f}".format(average_marks_obtained)
+
 
     if average_marks_obtained < 50:
         Grade = "Fail"
@@ -38,4 +41,5 @@ def Calculations():
     elif 90 <= average_marks_obtained <= 100:
         Grade = "A+"
 
-    return subject1, subject2, subject3, subject4, average_marks_obtained, Grade
+    return subject1, subject2, subject3, subject4, rounded_average_marks_obtained, Grade
+
