@@ -13,4 +13,3 @@ def take_studentinput():
     print(f"Enter the marks of {name} according to the subjects: ")
     return name, rollno, phonenumber, address
 
-
