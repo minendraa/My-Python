@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Records</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border-top: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #219150;
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                background-color: white;
+            }
+
+            td {
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Teacher Record Management</h2>
+
+<table id="studentTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date of Join</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for teacher in record %}
+        <tr>
+            <td data-label="Name">{{ teacher.first_name }}</td>
+            <td data-label="Last Name">{{ teacher.last_name }}</td>
+            <td data-label="Email">{{ teacher.email }}</td>
+            <td data-label="Date of Join">{{ teacher.join_date }}</td>
+            <td data-label="Marks">{{ teacher.salary }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'teacher_add' %}">Add New Teacher</a>
+<a href="{% url 'teacher_remove' %}">Delete existing Teacher</a>
+
+</body>
+</html>
