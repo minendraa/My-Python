@@ -48,19 +48,6 @@ def check(password):
         elif not letter.isalnum():  
             hasspecial = 1
 
-    # if upper == 0:
-    #     print("password should contain atleast 1 uppercase letter.")
-    #     #check(take_password())  
-    # elif lower == 0:
-    #     print("password should contain atleast 1 lowercase letter.")
-    #     #check(take_password())
-    # elif havenum == 0:
-    #     print("password should contain atleast 1 number.")
-    #     #check(take_password())
-    # elif hasspecial == 0:
-    #     print("password should contain atleast 1 special character.")
-    #     #check(take_password())
-
     checkstrength(lower,upper,havenum,hasspecial) 
 
 def entertwice(password):
