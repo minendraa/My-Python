@@ -43,12 +43,17 @@ class Truck(Vehicle):
 c1 = Car("Chevrolet", 2012, "Optra LT", 5)
 c1.info()
 c1.drive()
-c2 = Car("Hyundai", 2025, "Verna", 5)
-c2.info()
-c2.drive()
+print(id(c1.brand))
+# c2 = Car("Hyundai", 2025, "Verna", 5)
+# c2.info()
+# c2.drive()
 
-t1 = Truck("Tata", 2020, 5, 6)
-t1.info()
-t1.haul()
+# t1 = Truck("Tata", 2020, 5, 6)
+# t1.info()
+# t1.haul()
 
+c1.seats=4
+c1.info()
+c1.drive()
 
+print(id(c1.brand))
