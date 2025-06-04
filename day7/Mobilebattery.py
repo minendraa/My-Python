@@ -13,10 +13,11 @@ Validate inputs to avoid overcharging or draining below 0%.
 Add a method is_battery_low() that returns True if battery < 20%.
 Add charging time simulation using time.sleep() (for realism)."""
 class MobileBattery:
-    def __init__(self,__model,__battery_lvl):
-        self.__model=__model
-        self.__battery_lvl=__battery_lvl
-        print(f"Model of the phone: {self.__model}")
+    def __init__(self):
+        model=input("Enter the name of your phone: ")
+        self.model=model
+        self.__battery_lvl=80
+        print(f"Model of the phone: {self.model}")
     
     def charge(self, charged_lvl):
         if charged_lvl > 0:
@@ -39,10 +40,14 @@ class MobileBattery:
             print("Battery Saver turned ON")
         else:
             return ""
-phonename=input("enter the name of the phone: ")
-chargee=int(input("Enter the current charge: "))
-b1=MobileBattery(phonename,chargee)
-increasecharge=int(input("Enter the charged charge: "))
-b1.charge(increasecharge)
-decreasechargee=int(input("Enter the used charge: "))
-b1.battery_used(decreasechargee)
+        
+def takeinput():
+    c1=MobileBattery()
+    increasecharge=int(input("Enter the charged charge: "))
+    c1.charge(increasecharge)
+    decreasechargee=int(input("Enter the used charge: "))
+    c1.battery_used(decreasechargee)
+
+    
+        
+takeinput()
