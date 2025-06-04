@@ -47,7 +47,5 @@ def takeinput():
     c1.charge(increasecharge)
     decreasechargee=int(input("Enter the used charge: "))
     c1.battery_used(decreasechargee)
-
-    
-        
+     
 takeinput()

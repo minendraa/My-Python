@@ -48,19 +48,19 @@ def check(password):
         elif not letter.isalnum():  
             hasspecial = 1
 
-    checkstrength(lower,upper,havenum,hasspecial) 
+    checkstrength(lower,upper,havenum,hasspecial)             
 
 def entertwice(password):
 
-    password2=input("Enter the password again: ")
+    password2=input("Enter the password again: ") 
     if password==password2:
         print(f"{password} has been set as your password.")
     else:
-        print("Passwords does not match.. Please try again..")
+        print("Passwords does not match.. Please try again..") 
         entertwice(password)
 
-
-def checkstrength(lower,upper,havenum,hasspecial):
+ 
+def checkstrength(lower,upper,havenum,hasspecial): 
 
     sum=lower+upper+havenum+hasspecial
 

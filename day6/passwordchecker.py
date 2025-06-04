@@ -30,6 +30,7 @@ def take_password():
 password=take_password()
 
 def check(password):
+    
     #global upper,lower,havenum,hasspecial
     
     upper = 0

@@ -31,9 +31,10 @@ class BankAccount:
         return self._balance
 
     def get_pin(self):
-        print(f"Current pin for {self.owner}: ${self._balance}")
-        if self.__pin == "5678":
-            print(f"   (Now the pin is: {self.__pin})")
+        if self._BankAccount__pin == self.__pin:
+            print(id(self._BankAccount__pin))
+            print(id(self.__pin))
+            print(f"   (Now the pin is: {self._BankAccount__pin})")
         return self.__pin
 
    
@@ -46,10 +47,13 @@ acc1.withdraw(2000)
 
 acc1.get_balance()
 acc1.get_pin()
-acc1.__pin="3456"
-print((acc1.__pin))
+acc1._BankAccount__pin="3456"
+#print((acc1.__pin))
 
-print(id(acc1.__pin))
-print(id(acc1._BankAccount__pin))
+#print(id(acc1.__pin))
+#print(acc1._BankAccount__pin)
 acc1.get_pin()
 
+print(f"\nDirect access to _balance: {acc1._balance}")
+#print(f"\nDirect access to mangled name: {acc1.__pin}")
+print(f"\nDirect access to mangled name: {acc1._BankAccount__pin}")
