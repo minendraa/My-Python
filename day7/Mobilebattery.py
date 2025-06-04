@@ -39,8 +39,10 @@ class MobileBattery:
             print("Battery Saver turned ON")
         else:
             return ""
-   
-
-b1=MobileBattery("S23 ultra",50)
-b1.charge(30)
-b1.battery_used(65)
+phonename=input("enter the name of the phone: ")
+chargee=int(input("Enter the current charge: "))
+b1=MobileBattery(phonename,chargee)
+increasecharge=int(input("Enter the charged charge: "))
+b1.charge(increasecharge)
+decreasechargee=int(input("Enter the used charge: "))
+b1.battery_used(decreasechargee)
