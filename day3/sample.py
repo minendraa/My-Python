@@ -41,7 +41,6 @@ def check(items_name):
         else:
             print("Invalid input!! Please enter the value between 1 to 4. ")
             break
-
-
+        
 check(items_name)
 

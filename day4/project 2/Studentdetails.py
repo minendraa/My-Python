@@ -4,7 +4,7 @@ def take_studentinput():
         rollno=int(input("Enter the roll no of the student: "))
         phonenumber=input("Enter the phone number: ")
         address=input("Enter the address: ")
-        print("Student info added....")
+        print("Student info added..")
 
     except ValueError:
         print("Invalid input!!")

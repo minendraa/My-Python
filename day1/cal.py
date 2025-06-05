@@ -26,4 +26,3 @@ while loops==1:
     else:
         print("invalid input!! please enter number between 1 to 5") 
         break
-        

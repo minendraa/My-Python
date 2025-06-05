@@ -16,6 +16,4 @@ def listing():
         i=int(input("Enter any number: "))
     if i==0:
         sumofnumbers(numbers)
-    
 listing()
-
