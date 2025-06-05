@@ -68,13 +68,34 @@ class Library:
         except:
             print("Please enter a vlid book number. ")
 
+    def delete(self):
+        if not self.books:
+            print("No books are currently available in the library.")
+            return
+        try:
+            bookno=int(input("Enter the book no you want to delete: "))
+            for book in self.borrowed:
+                if book["bookno"] == bookno:
+                    print(f"Book '{book['bookname']}' is borrowed cannot delete. ")
+                    return
+                
+            for book in self.books:
+                if book["bookno"] == bookno:
+                    self.books.remove(book)
+                    print(f"Deleted '{book['bookname']}' successfully!")
+                    return
+                
+            print("Book not found.")
+
+        except:
+            print("Please enter a valid book number.")
 
 def operation():
     l1 = Library()
 
     while True:
         try:
-            choice = int(input("\nEnter:\n1 for displaying the books\n2 for adding a book\n3 for borrowing a book\n4 to return the borrowed book \n5 to quit \nYour choice: "))
+            choice = int(input("Enter:\n1 for displaying the books\n2 for adding a book\n3 for borrowing a book\n4 to return the borrowed book \n5 to delete \n 6 to quit \nYour choice: "))
             if choice == 1:
                 l1.display()
             elif choice == 2:
@@ -84,6 +105,8 @@ def operation():
             elif choice == 4:
                 l1.returnborrowed()
             elif choice==5:
+                l1.delete()
+            elif choice==6:
                 print("Goodbye!")
                 break
             else:
