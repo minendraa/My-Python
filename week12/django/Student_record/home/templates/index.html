@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Records</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        th {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border-top: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #219150;
+        }
+
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                background-color: white;
+            }
+
+            td {
+                position: relative;
+                padding-left: 50%;
+                text-align: left;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+                color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Record Management</h2>
+
+<table id="studentTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Marks</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in record %}
+        <tr>
+            <td data-label="Name">{{ student.first_name }}</td>
+            <td data-label="Last Name">{{ student.last_name }}</td>
+            <td data-label="Email">{{ student.email }}</td>
+            <td data-label="Date of Birth">{{ student.date_of_birth }}</td>
+            <td data-label="Marks">{{ student.marks }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'student_add' %}">Add New Student</a>
+<a href="{% url 'student_remove' %}">Delete existing Student</a>
+
+</body>
+</html>
